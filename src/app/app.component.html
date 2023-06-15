@@ -35,14 +35,18 @@
 </div> -->
 
 <mat-tab-group>
-  <mat-tab label="Tab 1" routerLink="/menu" routerLinkActive>
-    <!-- Content for Tab 1 -->
+  <mat-tab label="Tab 1" routerLink="/tab1" routerLinkActive>
+    <ng-template matTabContent>
+      <app-menu></app-menu>
+    </ng-template>
   </mat-tab>
-  <mat-tab label="Tab 2" routerLink="/routine" routerLinkActive>
-    <!-- Content for Tab 2 -->
+  <mat-tab label="Tab 2" routerLink="/tab2" routerLinkActive>
+    <ng-template matTabContent>
+      <app-routine></app-routine>
+    </ng-template>
   </mat-tab>
 </mat-tab-group>
-<router-outlet></router-outlet>
+
 
 
 
