@@ -1,40 +1,14 @@
-<!-- <div class="user-title">
-  <h1>Welcome, Gabriella</h1>
-</div>
+<!-- <div class="arrow-button">
+  <svg enable-background="new 0 0 32 32"  id="Слой_1" version="1.1" viewBox="0 0 32 32"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M16.714,11.297c-0.389-0.389-1.039-0.389-1.429,0l-8.999,8.976  c-0.394,0.394-0.394,1.033,0,1.426c0.394,0.394,1.034,0.394,1.428,0L16,13.436l8.285,8.264c0.395,0.394,1.034,0.394,1.429,0  c0.394-0.394,0.394-1.033,0-1.426L16.714,11.297z" fill="#121313" id="Expand_Less"/><g/><g/><g/><g/><g/><g/></svg>
+</div>  -->
 
-<div class="menu-container">
-  <div id="plant-svg">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.6 47.18">
-      <defs>
-        <style>
-          .cls-1 {
-            fill: none;
-            stroke: #333;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-width: 2px;
-          }
-        </style>
-      </defs>
-      <title>Asset 7</title>
-      <g id="Layer_2" data-name="Layer 2">
-        <g id="Layer_2-2" data-name="Layer 2">
-          <rect class="cls-1" x="1.07" y="24" width="31.75" height="5.52" rx="1" />
-          <path class="cls-1" d="M3.26,29.52,6.65,45.36a1,1,0,0,0,1,.82H26.21a1,1,0,0,0,1-.82l3.39-15.84" />
-          <path class="cls-1"
-          d="M4.37,16.81A6.3,6.3,0,0,0,13.28,7.9C11.16,5.78,3.54,4.77,1.47,4.53A.43.43,0,0,0,1,5C1.24,7.07,2.25,14.69,4.37,16.81Z" />
-          <line class="cls-1" x1="6.48" y1="10.15" x2="16.53" y2="20.2" />
-          <path class="cls-1"
-          d="M20.09,5.53a8.47,8.47,0,0,0,12,12c2.85-2.85,4.21-13.1,4.53-15.88A.57.57,0,0,0,36,1C33.19,1.32,22.94,2.68,20.09,5.53Z" />
-          <line class="cls-1" x1="29.04" y1="8.37" x2="16.53" y2="20.2" />
-          <line class="cls-1" x1="16.44" y1="22.55" x2="16.44" y2="19.55" />
-        </g>
-      </g>
-    </svg>
-  </div>
-</div> -->
+<app-bottom-navigation></app-bottom-navigation>
 
-<mat-tab-group>
+<router-outlet></router-outlet>
+
+
+<!-- 
+<mat-tab-group class="bottom-nav" headerPosition="below">
   <mat-tab label="Tab 1" routerLink="/tab1" routerLinkActive>
     <ng-template matTabContent>
       <app-menu></app-menu>
@@ -45,20 +19,9 @@
       <app-routine></app-routine>
     </ng-template>
   </mat-tab>
-</mat-tab-group>
+</mat-tab-group> -->
 
-
-
-
-<!-- <a routerLink="/menu">Menu</a>
-<a routerLink="/routine">Routine</a>
-<router-outlet></router-outlet> -->
-
-<!-- <div class="arrow-button">
-  <svg enable-background="new 0 0 32 32"  id="Слой_1" version="1.1" viewBox="0 0 32 32"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M16.714,11.297c-0.389-0.389-1.039-0.389-1.429,0l-8.999,8.976  c-0.394,0.394-0.394,1.033,0,1.426c0.394,0.394,1.034,0.394,1.428,0L16,13.436l8.285,8.264c0.395,0.394,1.034,0.394,1.429,0  c0.394-0.394,0.394-1.033,0-1.426L16.714,11.297z" fill="#121313" id="Expand_Less"/><g/><g/><g/><g/><g/><g/></svg>
-</div> -->
-<!-- 
-<div class="nav-bar">
+<!-- <div class="nav-bar">
   <div class="nav-icon">
     <svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
