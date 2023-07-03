@@ -1,10 +1,20 @@
 <nav class="bottom-nav">
-    <a routerLink="/menu" routerLinkActive="active">Menu</a>
-    <a routerLink="/routine" routerLinkActive="active">
-        <mat-icon>avg_pace</mat-icon>
+    <a routerLink="/menu" routerLinkActive="active">
+        <div class="bottom-nav-icon">
+            <app-icon [iconPath]="'assets/icons/potted-plant.svg'"></app-icon>
+        </div>
     </a>
-    <a routerLink="/calendar" routerLinkActive="active">Calendar</a>
-    <a routerLink="/todo" routerLinkActive="active">Todo</a>
-    <a routerLink="/profile" routerLinkActive="active">Profile</a>
+    <a routerLink="/routine" routerLinkActive="active">
+        <mat-icon>browse_gallery</mat-icon>
+    </a>
+    <a routerLink="/calendar" routerLinkActive="active">
+        <mat-icon>calendar_month</mat-icon>
+    </a>
+    <a routerLink="/todo" routerLinkActive="active">
+        <mat-icon>list_alt</mat-icon>
+    </a>
+    <a routerLink="/profile" routerLinkActive="active">
+        <mat-icon>face_2</mat-icon>
+    </a>
 </nav>
   

@@ -13,9 +13,10 @@ import { BottomNavigationComponent } from './bottom-navigation/bottom-navigation
 import { CalendarComponent } from './calendar/calendar.component';
 import { TodoComponent } from './todo/todo.component';
 import { ProfileComponent } from './profile/profile.component';
+import { IconComponent } from './icon/icon.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, RoutineComponent, BottomNavigationComponent, CalendarComponent, TodoComponent, ProfileComponent],
+  declarations: [AppComponent, MenuComponent, RoutineComponent, BottomNavigationComponent, CalendarComponent, TodoComponent, ProfileComponent, IconComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot([]),
