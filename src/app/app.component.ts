@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,5 +17,17 @@ export class AppComponent {
 
   navigateToRoutine() {
     this.router.navigate(['/routine']);
+  }
+
+  navigateToCalendar() {
+    this.router.navigate(['/calendar']);
+  }
+
+  navigateToTodo() {
+    this.router.navigate(['/todo']);
+  }
+
+  navigateToProfile() {
+    this.router.navigate(['/profile']);
   }
 }
