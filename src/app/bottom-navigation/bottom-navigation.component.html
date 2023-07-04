@@ -1,15 +1,35 @@
-<nav class="bottom-nav">
+<div class="menu-button">
     <a routerLink="/menu" routerLinkActive="active">
-        <div class="bottom-nav-icon">
-            <app-icon [iconPath]="'assets/icons/potted-plant.svg'"></app-icon>
-        </div>
+        <app-icon [iconPath]="'assets/icons/potted-plant.svg'"></app-icon>
     </a>
+</div>
+
+<nav class="bottom-nav">
     <a routerLink="/routine" routerLinkActive="active">
         <mat-icon>browse_gallery</mat-icon>
     </a>
     <a routerLink="/calendar" routerLinkActive="active">
         <mat-icon>calendar_month</mat-icon>
     </a>
+
+    <button id="plus-button" [matMenuTriggerFor]="menu">
+        <app-icon [iconPath]="'assets/icons/plus.svg'"></app-icon>
+        <!-- <mat-icon>add_circle</mat-icon> -->
+    </button>
+
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <span>Add routine</span>
+        </button>
+        <button mat-menu-item disabled>
+            <mat-icon>voicemail</mat-icon>
+            <span>Add journal</span>
+        </button>
+        <button mat-menu-item>
+            <span>Add task</span>
+        </button>
+    </mat-menu>
+
     <a routerLink="/todo" routerLinkActive="active">
         <mat-icon>list_alt</mat-icon>
     </a>
@@ -17,4 +37,3 @@
         <mat-icon>face_2</mat-icon>
     </a>
 </nav>
-  

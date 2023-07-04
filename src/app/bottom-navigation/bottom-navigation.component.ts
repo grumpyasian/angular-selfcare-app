@@ -5,6 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './bottom-navigation.component.html',
   styleUrls: ['./bottom-navigation.component.scss']
 })
-export class BottomNavigationComponent {
 
-}
+export class BottomNavigationComponent {}
