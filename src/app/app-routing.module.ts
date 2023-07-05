@@ -7,6 +7,7 @@ import { TodoComponent } from './todo/todo.component';
 import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
+  { path: '', component: MenuComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'routine', component: RoutineComponent },
   { path: 'calendar', component: CalendarComponent },
