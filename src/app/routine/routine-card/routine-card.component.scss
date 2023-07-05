@@ -1,0 +1,25 @@
+.routine-card {
+    max-width: 400px;
+    margin-bottom: 8px;
+    margin-top: 20px;
+    margin-left: 1em;
+    margin-right: 1em;
+    color: #507F8F;
+    border: solid #507F8F 1px;
+}
+
+#more-button {
+    border: #fff;
+    background-color: #fff;
+    user-select: none;
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 24px;
+    width: 30px;
+    // overflow: hidden;
+}
+
+#more-button > * { 
+    color: #507F8F;
+}

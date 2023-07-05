@@ -5,6 +5,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -16,15 +17,17 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { TodoComponent } from './todo/todo.component';
 import { ProfileComponent } from './profile/profile.component';
 import { IconComponent } from './icon/icon.component';
+import { RoutineCardComponent } from './routine/routine-card/routine-card.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, RoutineComponent, BottomNavigationComponent, CalendarComponent, TodoComponent, ProfileComponent, IconComponent],
+  declarations: [AppComponent, MenuComponent, RoutineComponent, BottomNavigationComponent, CalendarComponent, TodoComponent, ProfileComponent, IconComponent, RoutineCardComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot([]),
     MatTabsModule,
     NoopAnimationsModule,
     BrowserAnimationsModule,
+    MatCardModule,
     AppRoutingModule,
     MatIconModule,
     MatMenuModule, 
