@@ -1,25 +1,50 @@
-.routine-card {
-    max-width: 400px;
-    margin-bottom: 8px;
-    margin-top: 20px;
-    margin-left: 1em;
-    margin-right: 1em;
+.titleAndCancel {
+    display: flex;
+    flex-direction: row;
+}
+
+.titleAndCancel mat-dialog-actions{
+    justify-content: flex-end;
+    width: 110px;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    border-top: 0;
+}
+
+.titleAndSubtitle {
+    padding: 0 24px 0;
+}
+
+// Title
+.mdc-dialog__title {
     color: #507F8F;
+    margin: 0;
+    padding: 0;
+}
+
+// Cross button
+mat-icon {
+    color: #507F8F;
+}
+
+.routine-card-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: auto;
+}
+
+// .routine-card-content > * {
+//     margin: 0 10px 0;
+// }
+
+.routine-list {
+    display: flex;
+    flex-direction: column;
+}
+
+mat-card {
     border: solid #507F8F 1px;
-}
-
-#more-button {
-    border: #fff;
-    background-color: #fff;
-    user-select: none;
-    background-repeat: no-repeat;
-    display: inline-block;
-    fill: currentColor;
-    height: 24px;
-    width: 30px;
-    // overflow: hidden;
-}
-
-#more-button > * { 
-    color: #507F8F;
+    margin: 10px 0 10px;
 }

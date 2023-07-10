@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-routine-card',
@@ -7,16 +8,5 @@ import { Component } from '@angular/core';
 })
 
 export class RoutineCardComponent {
-  // When you click on the card expect on 3-dot icon, it will open the routine card. 
-  onCardClick(event: MouseEvent) {
-    const clickElement = event.target as HTMLElement;
-
-    if (clickElement.classList.contains('mat-icon')) {
-      // Disable open routine card and show e.g settings
-      event.preventDefault();
-    } else {
-      // Make the routine card appear and blur the routine-tab.  
-      // window.location.href = "https://www.figma.com";
-    }
-  }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 }

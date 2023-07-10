@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { RoutineCardComponent } from './routine-card/routine-card.component';
 
 @Component({
   selector: 'app-routine',
@@ -7,7 +9,41 @@ import { Component } from '@angular/core';
 })
 
 export class RoutineComponent {
-  // longText = `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
-  // from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
-  // originally bred for hunting.`;
+  constructor(private dialog: MatDialog, private elementRef: ElementRef) {}
+  
+  handleClick(event: MouseEvent, dialogRoutineCardId: string) {
+    const targetElement = event.target as HTMLElement;
+    const preventDialogOpening = targetElement.classList.contains('mat-icon');
+
+    if (!preventDialogOpening) {
+      this.openDialogRoutineCardById(dialogRoutineCardId);
+    }
+  }
+
+  openDialogRoutineCardById(dialogRoutineCardId: string) {
+    const dialogContent = this.getDialogRoutineCardContent(dialogRoutineCardId);
+    if (dialogContent) {
+      this.dialog.open(RoutineCardComponent, {
+        data: dialogContent
+      });
+    }
+  }
+
+  private getDialogRoutineCardContent(dialogRoutineCardId: string) {
+    switch (dialogRoutineCardId) {
+      case 'dialogRoutine1':
+        return {
+          title: 'morning routine',
+          time: '9:00-9:30 (30m)'
+        };
+      case 'dialogRoutine2':
+        return {
+          title: 'night routine',
+          time: '21:00-21:30 (30m)'
+        };
+      default:
+        return null;
+    }
+  }
 }
+
