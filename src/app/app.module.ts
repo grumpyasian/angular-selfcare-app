@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -31,7 +32,8 @@ import { RoutineCardComponent } from './routine/routine-card/routine-card.compon
     AppRoutingModule,
     MatIconModule,
     MatMenuModule, 
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
