@@ -1,0 +1,35 @@
+<!-- Title -->
+<div class="titleAndCancel">
+    <div class="titleAndSubtitle">
+        <h2 mat-dialog-title>Create routine</h2>
+        <!-- <p><small>{{ data.time }}</small></p> -->
+    </div>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>
+            <mat-icon id="cancel-button">cancel</mat-icon>
+        </button>
+    </mat-dialog-actions>
+</div>
+
+<mat-dialog-content class="routine-card-container">
+    <!-- <div class="create-routine-list">
+        <mat-card>
+            <mat-card-header class="routine-card-content">
+                <mat-icon>bed</mat-icon>
+                <mat-card-title-group>
+                    <mat-card-title>Make bed</mat-card-title>
+                </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content>
+            </mat-card-content>
+        </mat-card>
+    </div> -->
+
+    <input type="text" [(ngModel)]="newCard" placeholder="Enter card content">
+
+    <mat-dialog-actions align="center">
+        <button mat-button (click)="addCard()" mat-dialog-close>
+            <span>Done</span>
+        </button>
+    </mat-dialog-actions>
+</mat-dialog-content>

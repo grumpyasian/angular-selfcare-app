@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,9 +20,12 @@ import { TodoComponent } from './todo/todo.component';
 import { ProfileComponent } from './profile/profile.component';
 import { IconComponent } from './icon/icon.component';
 import { RoutineCardComponent } from './routine/routine-card/routine-card.component';
+import { CardService } from './card.service';
+import { CreateRoutineCardComponent } from './routine/create-routine-card/create-routine-card.component';
+
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, RoutineComponent, BottomNavigationComponent, CalendarComponent, TodoComponent, ProfileComponent, IconComponent, RoutineCardComponent],
+  declarations: [AppComponent, MenuComponent, RoutineComponent, BottomNavigationComponent, CalendarComponent, TodoComponent, ProfileComponent, IconComponent, RoutineCardComponent, CreateRoutineCardComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot([]),
@@ -33,9 +37,10 @@ import { RoutineCardComponent } from './routine/routine-card/routine-card.compon
     MatIconModule,
     MatMenuModule, 
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [CardService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

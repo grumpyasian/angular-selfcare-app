@@ -3,85 +3,32 @@
     <h1>Routines</h1>
 </div>
 
+
+
 <!-- Cards with media area -->
 <!-- Each card should have an id to identify a card -->
-<mat-card mat-button id="1" class="routine-card" (click)="handleClick($event, 'dialogRoutine1')">
-    <mat-card-header>
-        <mat-card-title-group>
-            <mat-card-title>Routines</mat-card-title>
-            <button id="more-button" [matMenuTriggerFor]="more">
-                <mat-icon>more_horiz</mat-icon>
-            </button>
-            <mat-menu #more="matMenu">
-                <button mat-menu-item>
-                    <span>Settings</span>
+<div *ngFor="let card of cards" class="card">
+    <mat-card mat-button id="1" class="routine-card" (click)="handleClick($event, 'dialogRoutine1')">
+        <mat-card-header>
+            <mat-card-title-group>
+                <mat-card-title>{{ card }}</mat-card-title>
+                <button id="more-button" [matMenuTriggerFor]="more">
+                    <mat-icon>more_horiz</mat-icon>
                 </button>
-            </mat-menu>
-            <mat-card-subtitle>9:30 - 10:00</mat-card-subtitle>
-        </mat-card-title-group>
-    </mat-card-header>
-    <mat-card-content>
-    </mat-card-content>
-</mat-card>
-
-<mat-card id="2" class="routine-card" (click)="handleClick($event, 'dialogRoutine2')">
-    <mat-card-header>
-        <mat-card-title-group>
-            <mat-card-title>Routines</mat-card-title>
-            <button id="more-button" [matMenuTriggerFor]="more">
-                <mat-icon>more_horiz</mat-icon>
-            </button>
-            <mat-menu #more="matMenu">
-                <button mat-menu-item>
-                    <span>Settings</span>
-                </button>
-            </mat-menu>
-            <mat-card-subtitle>9:30 - 10:00</mat-card-subtitle>
-        </mat-card-title-group>
-    </mat-card-header>
-    <mat-card-content>
-        <!-- {{longText}} -->
-    </mat-card-content>
-</mat-card>
-
-<mat-card id="3" class="routine-card">
-    <mat-card-header>
-        <mat-card-title-group>
-            <mat-card-title>Routines</mat-card-title>
-            <button id="more-button" [matMenuTriggerFor]="more">
-                <mat-icon>more_horiz</mat-icon>
-            </button>
-            <mat-menu #more="matMenu">
-                <button mat-menu-item>
-                    <span>Settings</span>
-                </button>
-            </mat-menu>
-            <mat-card-subtitle>9:30 - 10:00</mat-card-subtitle>
-        </mat-card-title-group>
-    </mat-card-header>
-    <mat-card-content>
-        <!-- {{longText}} -->
-    </mat-card-content>
-</mat-card>
-
-<mat-card id="4" class="routine-card">
-    <mat-card-header>
-        <mat-card-title-group>
-            <mat-card-title>Routines</mat-card-title>
-            <button id="more-button" [matMenuTriggerFor]="more">
-                <mat-icon>more_horiz</mat-icon>
-            </button>
-            <mat-menu #more="matMenu">
-                <button mat-menu-item>
-                    <span>Settings</span>
-                </button>
-            </mat-menu>
-            <mat-card-subtitle>9:30 - 10:00</mat-card-subtitle>
-        </mat-card-title-group>
-    </mat-card-header>
-    <mat-card-content>
-        <!-- {{longText}} -->
-    </mat-card-content>
-</mat-card>
+                <mat-menu #more="matMenu">
+                    <button mat-menu-item>
+                        <span>Settings</span>
+                    </button>
+                    <button mat-menu-item (click)="deleteCard(card)">
+                        <span>Delete</span>
+                    </button>
+                </mat-menu>
+                <mat-card-subtitle>9:30 - 10:00</mat-card-subtitle>
+            </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+        </mat-card-content>
+    </mat-card>
+</div>
 
 <!-- <app-routine-card></app-routine-card> -->

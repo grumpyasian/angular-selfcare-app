@@ -1,6 +1,9 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, OnInit, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { RoutineCardComponent } from './routine-card/routine-card.component';
+import { CardService } from '../card.service';
+
+
 
 @Component({
   selector: 'app-routine',
@@ -8,8 +11,44 @@ import { RoutineCardComponent } from './routine-card/routine-card.component';
   styleUrls: ['./routine.component.scss']
 })
 
-export class RoutineComponent {
-  constructor(private dialog: MatDialog, private elementRef: ElementRef) {}
+export class RoutineComponent implements OnInit {
+  cardsChangedEvent: EventEmitter<void>;
+  cards: string[] = [];
+
+  constructor(private dialog: MatDialog, private elementRef: ElementRef, private cardService: CardService) {
+    this.cardsChangedEvent = this.cardService.onCardsChanged();
+  }
+
+  ngOnInit() {
+    this.cardsChangedEvent.subscribe(() => {
+      this.getCards(); // Update the view or fetch latest cards
+    });
+
+    // Initial retrieval of cards
+    this.getCards();
+  }
+
+  getCards() {
+    this.cards = this.cardService.getCards();
+    // Example: Log the retrieved cards to the console
+    console.log('Retrieved Cards:', this.cards);
+    // You can also perform other actions based on the retrieved cards
+  }
+
+  addCard() {
+    const newCard = 'New Card'; // Example: New card data
+    this.cardService.addCard(newCard); // Add the new card
+  }
+
+  deleteCard(card: string) {
+    this.cardService.deleteCard(card); // Delete the specified card
+  }
+
+
+  // deleteCard(card: string): void {
+  //   this.cardService.deleteCard(card);
+  // }
+  
   
   handleClick(event: MouseEvent, dialogRoutineCardId: string) {
     const targetElement = event.target as HTMLElement;

@@ -13,7 +13,7 @@
 
     <mat-menu #menu="matMenu">
         <button mat-menu-item>
-            <span>Add routine</span>
+            <span (click)="openCreateCardDialog()">Add routine</span>
         </button>
         <button mat-menu-item disabled>
             <mat-icon>voicemail</mat-icon>
