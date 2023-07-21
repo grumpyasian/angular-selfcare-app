@@ -1,35 +1,33 @@
-<!-- Title -->
 <div class="titleAndCancel">
     <div class="titleAndSubtitle">
-        <h2 mat-dialog-title>Create routine</h2>
-        <!-- <p><small>{{ data.time }}</small></p> -->
+      <h2 mat-dialog-title>Create routine</h2>
     </div>
     <mat-dialog-actions align="end">
-        <button mat-button mat-dialog-close>
-            <mat-icon id="cancel-button">cancel</mat-icon>
-        </button>
+      <button mat-button mat-dialog-close>
+        <mat-icon id="cancel-button">cancel</mat-icon>
+      </button>
     </mat-dialog-actions>
-</div>
-
-<mat-dialog-content class="routine-card-container">
-    <!-- <div class="create-routine-list">
-        <mat-card>
-            <mat-card-header class="routine-card-content">
-                <mat-icon>bed</mat-icon>
-                <mat-card-title-group>
-                    <mat-card-title>Make bed</mat-card-title>
-                </mat-card-title-group>
-            </mat-card-header>
-            <mat-card-content>
-            </mat-card-content>
-        </mat-card>
-    </div> -->
-
-    <input type="text" [(ngModel)]="newCard" placeholder="Enter card content">
-
-    <mat-dialog-actions align="center">
-        <button mat-button (click)="addCard()" mat-dialog-close>
-            <span>Done</span>
-        </button>
-    </mat-dialog-actions>
-</mat-dialog-content>
+  </div>
+  
+  <div class="create-routine-container">
+    <mat-form-field class="card-title">
+      <input matInput placeholder="Card Title" [(ngModel)]="newCard">
+    </mat-form-field>
+  
+    <mat-form-field class="date-type">
+      <mat-label>Date Type</mat-label>
+      <mat-select [(ngModel)]="dateType">
+        <mat-option value="weekdays">Weekdays</mat-option>
+        <mat-option value="weekend">Weekend</mat-option>
+        <mat-option value="custom">Custom</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <div class="time-picker">
+      <mat-label>Time</mat-label>
+      <input type="time" [(ngModel)]="time">
+    </div>
+  
+    <button mat-raised-button color="primary" (click)="addCard()">Add Card</button>
+  </div>
+  

@@ -2,8 +2,7 @@ import { Component, ElementRef, OnInit, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { RoutineCardComponent } from './routine-card/routine-card.component';
 import { CardService } from '../card.service';
-
-
+import { Card, DateType } from '../card.model';
 
 @Component({
   selector: 'app-routine',
@@ -13,7 +12,7 @@ import { CardService } from '../card.service';
 
 export class RoutineComponent implements OnInit {
   cardsChangedEvent: EventEmitter<void>;
-  cards: string[] = [];
+  cards: Card[] = []; // Update the type to Card[]
 
   constructor(private dialog: MatDialog, private elementRef: ElementRef, private cardService: CardService) {
     this.cardsChangedEvent = this.cardService.onCardsChanged();
@@ -36,14 +35,18 @@ export class RoutineComponent implements OnInit {
   }
 
   addCard() {
-    const newCard = 'New Card'; // Example: New card data
-    this.cardService.addCard(newCard); // Add the new card
-  }
+    const newCardData = 'New Card'; // Example: New card data
+    const dateType = DateType.Custom; // Example: Set the dateType (you can customize this based on your requirements)
+    const time = new Date().toLocaleTimeString(); // Example: Get the current time as a string
 
-  deleteCard(card: string) {
-    this.cardService.deleteCard(card); // Delete the specified card
+    this.cardService.addCard(newCardData, dateType, time); // Add the new card with data, dateType, and time
   }
+  
 
+  deleteCard(card: Card): void {
+    this.cardService.deleteCard(card.id); // Delete the specified card by ID
+  }
+  
 
   // deleteCard(card: string): void {
   //   this.cardService.deleteCard(card);

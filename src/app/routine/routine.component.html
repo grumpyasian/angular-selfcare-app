@@ -8,10 +8,10 @@
 <!-- Cards with media area -->
 <!-- Each card should have an id to identify a card -->
 <div *ngFor="let card of cards" class="card">
-    <mat-card mat-button id="1" class="routine-card" (click)="handleClick($event, 'dialogRoutine1')">
+    <mat-card mat-button class="routine-card" (click)="handleClick($event, 'dialogRoutine1')">
         <mat-card-header>
             <mat-card-title-group>
-                <mat-card-title>{{ card }}</mat-card-title>
+                <mat-card-title>{{ card.title }}</mat-card-title>
                 <button id="more-button" [matMenuTriggerFor]="more">
                     <mat-icon>more_horiz</mat-icon>
                 </button>

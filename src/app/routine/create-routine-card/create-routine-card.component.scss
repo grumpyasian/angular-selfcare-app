@@ -1,58 +1,62 @@
 .titleAndCancel {
     display: flex;
     flex-direction: row;
-}
-
-.titleAndCancel mat-dialog-actions{
+    justify-content: space-between;
+    padding: 16px; /* Add padding to the title section */
+    padding-top: 0;
+  }
+  
+  .titleAndCancel mat-dialog-actions {
     justify-content: flex-end;
-    // width: 110px;
-    width: auto;
-    height: 0;
-    overflow: hidden;
-    padding: 0;
-    border-top: 0;
-}
-
-.titleAndSubtitle {
-    padding: 0 24px 0;
+    margin-top: -16px; /* Move the actions section up */
+    margin-right: -16px; /* Move the actions section to the right */
+  }
+  
+  .titleAndSubtitle {
     width: 100%;
-}
-
-// Title
-.mdc-dialog__title {
+  }
+  
+  .mdc-dialog__title {
     color: #507F8F;
     margin: 0;
     padding: 0;
-}
-
-mat-icon {
+  }
+  
+  mat-icon {
     color: #507F8F;
-}
-
-// Cross button
-#cancel-button {
+  }
+  
+  #cancel-button {
     position: absolute;
-    // top: 0;
-    // right: 0;
-}
-
-.routine-card-container {
+    top: 0;
+    right: 0;
+  }
+  
+  .create-routine-container {
     display: flex;
     flex-direction: column;
-    width: 300px;
-    height: auto;
-}
-
-// .routine-card-content > * {
-//     margin: 0 10px 0;
-// }
-
-.create-routine-list {
-    display: flex;
-    flex-direction: column;
-}
-
-mat-card {
+    align-items: center; /* Center the form fields horizontally */
+    padding: 16px; /* Add padding to the form container */
+  }
+  
+  .date-type,
+  .card-title,
+  .time-picker {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  mat-card {
     border: solid #507F8F 1px;
     margin: 10px 0 10px;
-}
+  }
+  
+  mat-form-field {
+    width: 100%;
+    padding: 8px; /* Add padding to the mat-form-field */
+  }
+  
+  button {
+    width: 100%;
+  }
+  
