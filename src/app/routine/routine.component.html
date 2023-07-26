@@ -3,17 +3,15 @@
     <h1>Routines</h1>
 </div>
 
-
-
 <!-- Cards with media area -->
 <!-- Each card should have an id to identify a card -->
-<div *ngFor="let card of cards" class="card">
-    <mat-card mat-button class="routine-card" (click)="handleClick($event, 'dialogRoutine1')">
+<div *ngFor="let card of cards" class="card" (click)="handleClick(card, $event)">
+    <mat-card mat-button class="routine-card">
         <mat-card-header>
             <mat-card-title-group>
                 <mat-card-title>{{ card.title }}</mat-card-title>
                 <button id="more-button" [matMenuTriggerFor]="more">
-                    <mat-icon>more_horiz</mat-icon>
+                    <mat-icon class="more-icon">more_horiz</mat-icon>
                 </button>
                 <mat-menu #more="matMenu">
                     <button mat-menu-item>
@@ -23,12 +21,10 @@
                         <span>Delete</span>
                     </button>
                 </mat-menu>
-                <mat-card-subtitle>9:30 - 10:00</mat-card-subtitle>
+                <mat-card-subtitle>{{ card.time }}</mat-card-subtitle>
             </mat-card-title-group>
         </mat-card-header>
         <mat-card-content>
         </mat-card-content>
     </mat-card>
 </div>
-
-<!-- <app-routine-card></app-routine-card> -->
