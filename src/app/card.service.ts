@@ -6,13 +6,11 @@ export class CardService {
   private cardsKey = 'myCards';
   private cardsChanged = new EventEmitter<void>();
   private cards: Card[] = [];
-  // private idCounter = 1;
 
   constructor() {
     const storedCards = this.getCardsFromStorage();
     if (storedCards) {
       this.cards = storedCards;
-      // this.updateIdCounter();
     }
   }
 
@@ -23,19 +21,17 @@ export class CardService {
       dateType: dateType,
       time: time,
     };
-    this.cards.push(newCard);
+    this.cards.unshift(newCard); // Add the new card at the beginning of the array
     this.saveCardsToStorage();
     this.cardsChanged.next();
   }
-
-
 
   deleteCard(cardId: number): void {
     const index = this.cards.findIndex(card => card.id === cardId);
     if (index !== -1) {
       this.cards.splice(index, 1);
       this.saveCardsToStorage();
-      this.cardsChanged.emit(); // Emit event to notify changes
+      this.cardsChanged.emit();
     }
   }
 
@@ -47,11 +43,6 @@ export class CardService {
     return this.cardsChanged;
   }
 
-  // private updateIdCounter(): void {
-  //   const maxId = Math.max(...this.cards.map(card => card.id));
-  //   this.idCounter = maxId + 1;
-  // }
-
   private saveCardsToStorage(): void {
     localStorage.setItem(this.cardsKey, JSON.stringify(this.cards));
   }
@@ -61,5 +52,6 @@ export class CardService {
     return storedCards ? JSON.parse(storedCards) : [];
   }
 }
+
 export { DateType };
 
