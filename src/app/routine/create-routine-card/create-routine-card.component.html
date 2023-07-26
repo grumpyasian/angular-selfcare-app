@@ -1,33 +1,41 @@
 <div class="titleAndCancel">
-    <div class="titleAndSubtitle">
-      <h2 mat-dialog-title>Create routine</h2>
-    </div>
-    <mat-dialog-actions align="end">
-      <button mat-button mat-dialog-close>
-        <mat-icon id="cancel-button">cancel</mat-icon>
-      </button>
-    </mat-dialog-actions>
+  <div class="titleAndSubtitle">
+    <h2 mat-dialog-title>Create routine</h2>
   </div>
-  
-  <div class="create-routine-container">
-    <mat-form-field class="card-title">
-      <input matInput placeholder="Card Title" [(ngModel)]="newCard">
-    </mat-form-field>
-  
-    <mat-form-field class="date-type">
-      <mat-label>Date Type</mat-label>
-      <mat-select [(ngModel)]="dateType">
-        <mat-option value="weekdays">Weekdays</mat-option>
-        <mat-option value="weekend">Weekend</mat-option>
-        <mat-option value="custom">Custom</mat-option>
-      </mat-select>
-    </mat-form-field>
-  
-    <div class="time-picker">
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>
+      <mat-icon id="cancel-button">cancel</mat-icon>
+    </button>
+  </mat-dialog-actions>
+</div>
+
+<div class="create-routine-container">
+  <mat-form-field class="card-title">
+    <input matInput placeholder="Card Title" [(ngModel)]="newCard">
+  </mat-form-field>
+
+  <mat-form-field class="date-type">
+    <mat-label>Date Type</mat-label>
+    <mat-select [(ngModel)]="dateType">
+      <mat-option value="weekdays">Weekdays</mat-option>
+      <mat-option value="weekend">Weekend</mat-option>
+      <mat-option value="custom">Custom</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- <div class="time-picker">
       <mat-label>Time</mat-label>
       <input type="time" [(ngModel)]="time">
-    </div>
-  
-    <button mat-raised-button color="primary" (click)="addCard()">Add Card</button>
+    </div> -->
+
+  <div class="time-picker">
+    <mat-form-field appearance="outline">
+      <mat-label>Material Timepicker</mat-label>
+      <input matInput [(ngModel)]="time" [ngxMatTimepicker]="picker">
+      <ngx-mat-timepicker #picker></ngx-mat-timepicker>
+    </mat-form-field>
+    <!-- <pre>Selected time: {{ time | json}}</pre> -->
   </div>
-  
+
+  <button mat-raised-button color="primary" (click)="addCard()" mat-dialog-close>Add Card</button>
+</div>

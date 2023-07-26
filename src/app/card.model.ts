@@ -2,7 +2,7 @@ export interface Card {
     id: number;
     title: string;
     dateType: DateType;
-    time: string;
+    time: any;
 }
 
 export enum DateType {
